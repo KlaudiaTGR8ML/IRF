@@ -23,6 +23,7 @@ namespace VersionControl
             
             button1.Text = Resource.Add;
             button2.Text = Resource.Fájlba_írás;
+            button3.Text = Resource.Törlés;
 
             listBox1.DataSource = users;
             listBox1.ValueMember = "ID";
@@ -63,21 +64,16 @@ namespace VersionControl
 
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Remove(listBox1.SelectedItem);
+        }
     }
 
 }
 
 
 
-
-
-
-
-//private void button3_Click(object sender, EventArgs e)
-//{
-//
-//  listBox1.Items.Remove(listBox1.SelectedItem);
-// }
 
 
 

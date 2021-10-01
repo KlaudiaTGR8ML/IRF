@@ -86,5 +86,14 @@ namespace VersionControl {
                 return ResourceManager.GetString("FullName", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Törlés.
+        /// </summary>
+        internal static string Törlés {
+            get {
+                return ResourceManager.GetString("Törlés", resourceCulture);
+            }
+        }
     }
 }
