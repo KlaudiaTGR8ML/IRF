@@ -17,11 +17,12 @@ namespace _6gyakorlat
     public partial class Form1 : Form
     {
         BindingList<RateData> Rates = new BindingList<RateData>();
+        BindingList<string> Currencies = new BindingList<string>();
         string result;
         public Form1()
         {
             InitializeComponent();
-            
+            GetCurrencies();
             RefreshData();
 
 
@@ -34,8 +35,23 @@ namespace _6gyakorlat
             GetXMLfeldolgozása();
             GetDiagram();
             dataGridView1.DataSource = Rates;
+            //comboBox1.DataSource = Currencies;
         }
-
+        private void GetCurrencies()
+        {
+            MNBArfolyamServiceSoapClient mnbService = new MNBArfolyamServiceSoapClient();
+            GetCurrenciesRequestBody request = new GetCurrenciesRequestBody();
+            var response = mnbService.GetCurrencies(request);
+            var result = response.GetCurrenciesResult;
+            XmlDocument xml = new XmlDocument();
+            xml.LoadXml(result);
+            foreach (XmlElement item in xml.DocumentElement.ChildNodes[0])
+            {
+                string newItem = item.InnerText;
+                Currencies.Add(newItem);
+            }
+            comboBox1.DataSource = Currencies;
+        }
         private void GetExchangeRates()
         {
             var mnbService = new MNBArfolyamServiceSoapClient();
@@ -68,12 +84,15 @@ namespace _6gyakorlat
                 rate.Date = DateTime.Parse(element.GetAttribute("date"));
                
                 var childElement = (XmlElement)element.ChildNodes[0];
+                if (childElement == null)
+                    continue;
                 rate.Currency = childElement.GetAttribute("curr");
 
                 var unit = decimal.Parse(childElement.GetAttribute("unit"));
                 var value = decimal.Parse(childElement.InnerText);
                 if (unit != 0)
                     rate.Value = value / unit;
+                
             }
             
         }
