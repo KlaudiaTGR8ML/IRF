@@ -71,6 +71,14 @@ namespace _8.hét
                 BallColor = button1.BackColor
             };
         }
+        private void btnpresent_Click(object sender, EventArgs e)
+        {
+            ToyFactory = new PresentFactory
+            {
+            BoxColor = btncolorbox.BackColor,
+            RibbenColor = btncolorribben.BackColor
+            };
+        }
         private void DisplayNext()
         {
             if (_nextToy != null)
@@ -91,5 +99,7 @@ namespace _8.hét
                 return;
             button.BackColor = colorPicker.Color;
         }
+
+       
     }
 }

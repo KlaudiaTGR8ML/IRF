@@ -37,6 +37,9 @@ namespace _8.hét
             this.btnball = new System.Windows.Forms.Button();
             this.lblnext = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnpresent = new System.Windows.Forms.Button();
+            this.btncolorribben = new System.Windows.Forms.Button();
+            this.btncolorbox = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mainpanel
@@ -84,7 +87,7 @@ namespace _8.hét
             // lblnext
             // 
             this.lblnext.AutoSize = true;
-            this.lblnext.Location = new System.Drawing.Point(176, 0);
+            this.lblnext.Location = new System.Drawing.Point(558, -2);
             this.lblnext.Name = "lblnext";
             this.lblnext.Size = new System.Drawing.Size(65, 13);
             this.lblnext.TabIndex = 3;
@@ -100,11 +103,44 @@ namespace _8.hét
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnpresent
+            // 
+            this.btnpresent.Location = new System.Drawing.Point(176, 12);
+            this.btnpresent.Name = "btnpresent";
+            this.btnpresent.Size = new System.Drawing.Size(76, 62);
+            this.btnpresent.TabIndex = 5;
+            this.btnpresent.Text = "Present";
+            this.btnpresent.UseVisualStyleBackColor = true;
+            this.btnpresent.Click += new System.EventHandler(this.btnpresent_Click);
+            // 
+            // btncolorribben
+            // 
+            this.btncolorribben.BackColor = System.Drawing.Color.Yellow;
+            this.btncolorribben.Location = new System.Drawing.Point(372, 42);
+            this.btncolorribben.Name = "btncolorribben";
+            this.btncolorribben.Size = new System.Drawing.Size(75, 23);
+            this.btncolorribben.TabIndex = 6;
+            this.btncolorribben.UseVisualStyleBackColor = false;
+            this.btncolorribben.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btncolorbox
+            // 
+            this.btncolorbox.BackColor = System.Drawing.Color.Red;
+            this.btncolorbox.Location = new System.Drawing.Point(291, 42);
+            this.btncolorbox.Name = "btncolorbox";
+            this.btncolorbox.Size = new System.Drawing.Size(75, 23);
+            this.btncolorbox.TabIndex = 7;
+            this.btncolorbox.UseVisualStyleBackColor = false;
+            this.btncolorbox.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btncolorbox);
+            this.Controls.Add(this.btncolorribben);
+            this.Controls.Add(this.btnpresent);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblnext);
             this.Controls.Add(this.btnball);
@@ -126,6 +162,9 @@ namespace _8.hét
         private System.Windows.Forms.Button btnball;
         private System.Windows.Forms.Label lblnext;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnpresent;
+        private System.Windows.Forms.Button btncolorribben;
+        private System.Windows.Forms.Button btncolorbox;
     }
 }
 
