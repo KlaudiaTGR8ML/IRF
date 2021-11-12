@@ -1,4 +1,5 @@
-﻿using _8.hét.Entities;
+﻿using _8.hét.Abstractions;
+using _8.hét.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,43 +15,43 @@ namespace _8.hét
 
     public partial class Form1 : Form
     {
-        private List<Ball> _balls = new List<Ball>();
-        private BallFactory _factory;
-        public BallFactory Factory
+        private List<Toy> _toys = new List<Toy>();
+        private IToyFactory _toyfactory;
+        public IToyFactory ToyFactory
         {
-            get { return _factory; }
-            set { _factory = value; }
+            get { return _toyfactory; }
+            set { _toyfactory = value; }
         }
 
         public Form1()
         {
             InitializeComponent();
-            Factory = new BallFactory();
+            ToyFactory = new BallFactory();
         }
 
         private void createTimer_Tick(object sender, EventArgs e)
         {
-            var ball = Factory.CreateNew();
-            _balls.Add(ball);
-            ball.Left = -ball.Width;
-            mainpanel.Controls.Add(ball);
+            var toy = ToyFactory.CreateNew();
+            _toys.Add(toy);
+            toy.Left = -toy.Width;
+            mainpanel.Controls.Add(toy);
         }
 
         private void conveyorTimer_Tick(object sender, EventArgs e)
         {
             var maxPosition = 0;
-            foreach (var ball in _balls)
+            foreach (var item in _toys)
             {
-                ball.MoveToy();
-                if (ball.Left > maxPosition)
-                    maxPosition = ball.Left;
+                item.MoveToy();
+                if (item.Left > maxPosition)
+                    maxPosition = item.Left;
             }
 
             if (maxPosition > 1000)
             {
-                var oldestBall = _balls[0];
-                mainpanel.Controls.Remove(oldestBall);
-                _balls.Remove(oldestBall);
+                var oldestToy = _toys[0];
+                mainpanel.Controls.Remove(oldestToy);
+                _toys.Remove(oldestToy);
             }
         }
     }
