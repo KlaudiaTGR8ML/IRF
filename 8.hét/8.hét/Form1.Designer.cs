@@ -84,7 +84,7 @@ namespace _8.hét
             // lblnext
             // 
             this.lblnext.AutoSize = true;
-            this.lblnext.Location = new System.Drawing.Point(186, 12);
+            this.lblnext.Location = new System.Drawing.Point(176, 0);
             this.lblnext.Name = "lblnext";
             this.lblnext.Size = new System.Drawing.Size(65, 13);
             this.lblnext.TabIndex = 3;
@@ -92,11 +92,12 @@ namespace _8.hét
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Blue;
             this.button1.Location = new System.Drawing.Point(291, 13);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1

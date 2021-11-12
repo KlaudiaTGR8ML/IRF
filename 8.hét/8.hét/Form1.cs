@@ -66,7 +66,10 @@ namespace _8.hét
 
         private void btnball_Click(object sender, EventArgs e)
         {
-            ToyFactory = new BallFactory();
+            ToyFactory = new BallFactory
+            {
+                BallColor = button1.BackColor
+            };
         }
         private void DisplayNext()
         {
