@@ -26,7 +26,7 @@ namespace _8.hét
         public Form1()
         {
             InitializeComponent();
-            ToyFactory = new BallFactory();
+            ToyFactory = new CarFactory();
         }
 
         private void createTimer_Tick(object sender, EventArgs e)
