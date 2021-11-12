@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace _8.hét.Abstractions
 {
-    public class Toy:Label
+    public abstract class Toy:Label
     {
         public Toy()
         {
@@ -22,11 +22,8 @@ namespace _8.hét.Abstractions
         {
             DrawImage(e.Graphics);
         }
+        protected abstract void DrawImage(Graphics g);
 
-        private void DrawImage(Graphics g)
-        {
-            g.FillEllipse(new SolidBrush(Color.Blue), 0, 0, Width, Height);
-        }
         public void MoveToy()
         {
             Left += 1;

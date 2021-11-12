@@ -10,6 +10,7 @@ namespace _8.hét.Entities
     {
         public Ball CreateNew()
         {
+
             return new Ball();
         }
     }
